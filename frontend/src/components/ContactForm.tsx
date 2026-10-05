@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { useSearchParams } from "react-router-dom";
 import { AlertCircle, CheckCircle2, LoaderCircle, Send } from "lucide-react";
 import { services } from "../data/services";
@@ -41,6 +41,13 @@ const ContactForm = () => {
   const [submitError, setSubmitError] = useState(false);
   const [result, setResult] = useState<SendResult | null>(null);
   const [honeypot, setHoneypot] = useState("");
+
+  useEffect(() => {
+    const matched = services.find((s) => s.slug === searchParams.get("service"))?.title;
+    if (matched) {
+      setValues((current) => ({ ...current, service: matched }));
+    }
+  }, [searchParams]);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>

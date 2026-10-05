@@ -7,7 +7,7 @@ export const site = {
   tagline: "Your technology partner, rain or shine.",
   description:
     "Eversunny Technologies designs, builds and scales software for growing businesses — from first prototype to cloud-scale platforms.",
-  email: "hello@eversunny.com",
+  email: "admin@eversunny.com",
   careersEmail: "careers@eversunny.com",
   phone: "", // e.g. "+1 (555) 010-0000"
   // One entry per displayed line.
