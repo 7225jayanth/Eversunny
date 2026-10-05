@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUp, Mail, MapPin, Phone } from "lucide-react";
 import Logo from "../ui/Logo";
 import { services } from "../../data/services";
-import { site } from "../../data/site";
+import { mapsUrl, site } from "../../data/site";
 import "./Footer.css";
 
 const companyLinks = [
@@ -70,10 +70,16 @@ const Footer = () => (
                 <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>{site.phone}</a>
               </li>
             )}
-            {site.address && (
+            {site.address.length > 0 && (
               <li>
                 <MapPin aria-hidden="true" />
-                <span>{site.address}</span>
+                <a href={mapsUrl} target="_blank" rel="noopener noreferrer">
+                  {site.address.map((line) => (
+                    <span key={line} className="address-line">
+                      {line}
+                    </span>
+                  ))}
+                </a>
               </li>
             )}
           </ul>

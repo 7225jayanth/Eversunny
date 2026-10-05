@@ -10,8 +10,18 @@ export const site = {
   email: "hello@eversunny.com",
   careersEmail: "careers@eversunny.com",
   phone: "", // e.g. "+1 (555) 010-0000"
-  address: "", // e.g. "123 Main Street, Suite 100, City, ST 00000"
+  // One entry per displayed line.
+  address: [
+    "H.No. 3-9-628/8, P No: 8 & 9,",
+    "Mansoorabad, Hayathnagar,",
+    "K.V. Rangareddy – 500068,",
+    "Telangana, India",
+  ],
   social: {
     linkedin: "", // e.g. "https://www.linkedin.com/company/eversunny"
   },
 };
+
+export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  site.address.join(" ")
+)}`;

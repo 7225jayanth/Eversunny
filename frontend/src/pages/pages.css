@@ -499,8 +499,14 @@
   text-underline-offset: 3px;
 }
 
-.contact-info__item p {
+.contact-info__item p,
+.contact-info__address {
   color: var(--text-muted);
+}
+
+.contact-info__address + a {
+  display: inline-block;
+  margin-top: 6px;
 }
 
 .next-steps {

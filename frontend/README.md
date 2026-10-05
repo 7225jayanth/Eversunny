@@ -29,8 +29,9 @@ npm run lint
 
 All copy lives in `src/data/` — no component changes are needed for routine updates.
 
-- `site.ts` — company name, emails, phone, address, LinkedIn. **Confirm the email
-  addresses before launch.** Phone, address and LinkedIn are hidden while empty.
+- `site.ts` — company name, emails, phone, office address (one array entry per line),
+  LinkedIn. **Confirm the email addresses before launch.** Phone and LinkedIn are
+  hidden while empty.
 - `services.ts` — the six services and everything on their detail pages. Adding an
   entry automatically adds it to the header menu, footer, home page and routes.
 - `company.ts` — pillars, process steps, industries, engagement models, technologies,

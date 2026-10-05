@@ -2,7 +2,7 @@ import { Clock, Globe2, Mail, MapPin, Phone } from "lucide-react";
 import PageHero from "../components/ui/PageHero";
 import Reveal from "../components/ui/Reveal";
 import ContactForm from "../components/ContactForm";
-import { site } from "../data/site";
+import { mapsUrl, site } from "../data/site";
 import { usePageMeta } from "../hooks/usePageMeta";
 import "./pages.css";
 
@@ -55,14 +55,23 @@ const ContactPage = () => {
                   </div>
                 </li>
               )}
-              {site.address && (
+              {site.address.length > 0 && (
                 <li className="contact-info__item">
                   <span className="icon-badge">
                     <MapPin aria-hidden="true" />
                   </span>
                   <div>
                     <h2>Visit us</h2>
-                    <p>{site.address}</p>
+                    <address className="contact-info__address">
+                      {site.address.map((line) => (
+                        <span key={line} className="address-line">
+                          {line}
+                        </span>
+                      ))}
+                    </address>
+                    <a href={mapsUrl} target="_blank" rel="noopener noreferrer">
+                      Get directions
+                    </a>
                   </div>
                 </li>
               )}
